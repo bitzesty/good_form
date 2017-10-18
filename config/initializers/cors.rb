@@ -7,10 +7,10 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins GoodForm::Application.config.domain
+    origins GoodForm::Application.config.domain, ENV["ALLOWED_CORS_DOMAIN"]
 
     resource '*',
     headers: :any,
-    methods: [:post]
+    methods: [:post, :options]
   end
 end
