@@ -31,7 +31,7 @@ module GoodForm
     config.api_only = true
 
     config.domain = ENV["SITE_DOMAIN"] || "example.com"
-    config.origins = ENV["ORIGINS"].present? ENV["ORIGINS"].split(",") : "example.com"
+    config.origins = ENV["ORIGINS"].present? ? ENV["ORIGINS"].split(",") : "example.com"
     config.default_return_url = ENV["SITE_RETURN_URL"] || "http://example.com"
     config.mailfrom_address = ENV["MAILFROM_ADDRESS"] || "no-reply@example.com"
     config.mailto_address = ENV["MAILTO_ADDRESS"] || "info@example.com"
