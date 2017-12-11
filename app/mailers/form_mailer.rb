@@ -4,6 +4,6 @@ class FormMailer < ApplicationMailer
     @params = params
     mail to: GoodForm::Application.config.mailto_address,
          reply_to: @params.fetch('email', nil),
-         subject: GoodForm::Application.config.mailto_subject
+         subject: @params.fetch('subject', nil) || GoodForm::Application.config.mailto_subject
   end
 end
