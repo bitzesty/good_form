@@ -6,7 +6,8 @@ POST request to your-domain.com/forms
 
 Environment variables:
 
-    ENV["SITE_DOMAIN"]
+    ENV["SITE_DOMAIN"] = "www.example.com" 
+    ENV["ORIGINS"] = "www.example.com,example.com" (used in Rack CORS)
     ENV["SITE_RETURN_URL"]
     ENV["MAILTO_ADDRESS"]
     ENV["MAILTO_SUBJECT"]
@@ -17,4 +18,4 @@ Special form fields:
 `email` will set the reply_to address to this value
 Files use a file uploader https://www.filestack.com/
 
-Use reCaptcha for spam filtering 
+Use reCaptcha for spam filtering
